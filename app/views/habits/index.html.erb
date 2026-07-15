@@ -1,0 +1,14 @@
+<h2>habit</h2>
+<% @habits.each do |habit| %>
+    <dl>
+      <dt>名前</dt>
+      <dd><%= habit.task.name %></dd>
+      <dt>内容</dt>
+      <dd><%= habit.task.description %></dd>
+      <dt>終了予定日</dt>
+      <dd><%= habit.end_date %></dd>
+    </dl>
+    <%= button_to "今日の#{habit.task.name}完了!",completions_path(habit_id: habit.id),method: :post %>
+    <%= button_to "削除" ,habit_path(habit),method: :delete %>
+  <%= link_to "編集" ,edit_habit_path(habit) %>
+<% end %>

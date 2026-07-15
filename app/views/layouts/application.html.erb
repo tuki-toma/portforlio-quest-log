@@ -18,6 +18,30 @@
   </head>
 
   <body>
+    <header>
+      <h1>Quest Log</h1>
+      <% if current_user %>
+        <%= current_user.name %>
+        <% if current_user.icon.attached? %>
+          <%= image_tag current_user.icon %>
+        <% else %>
+          <%= image_tag "defo.icon.png" %>
+        <% end %>
+      <% else %>
+        ゲストユーザー
+        <%= image_tag "defo.icon.png" %>
+      <% end %>
+      
+        
     <%= yield %>
+    <footer>
+      <ul>
+        <li><%= link_to "home", tasks_path %></li>
+        <li><%= link_to "todo一覧" , todo_lists_path %></li>
+        <li><%= link_to "habit一覧" , habits_path %></li>
+        <li><%= link_to "todo新規作成" , new_todo_list_path %></li>
+        <li><%= link_to "habit新規作成" , new_habit_path %></li>
+      </ul>
+    </footer>
   </body>
 </html>
