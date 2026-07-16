@@ -10,8 +10,6 @@ class HabitsController < ApplicationController
 
   def create
     @habit = Habit.new(habit_params)
-    p @habit.task
-    p @habit.task&.user
     @habit.task.user = current_user
     if @habit.save
       redirect_to habits_path
@@ -30,19 +28,10 @@ class HabitsController < ApplicationController
     @habit.task.user = current_user
     if @habit.update(habit_params)
       redirect_to habits_path
-    else 
-      p @habit.errors.full_messages
-      p @habit.task.errors.full_messages
-
+    else
       render :edit ,status: :unprocessable_entity
     end
   end    
-
-
-  def show
-    @habit = Habit.find(params[:id])
-    @task = @habit.task
-  end
 
   def destroy
     begin

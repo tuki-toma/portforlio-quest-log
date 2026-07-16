@@ -1,8 +1,9 @@
 Rails.application.routes.draw do
+  get "completions/create"
   resources :tasks ,except:[:show]
   resources :habits ,except:[:show]
   resources :todo_lists ,except:[:show]
-  resources :completions
+  resources :completions , only:[:create]
   devise_for :users
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 

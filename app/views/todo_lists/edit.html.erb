@@ -1,0 +1,30 @@
+<h2>todo_listの編集</h2>
+<%= form_with model: @todo_list,local: true do |f| %>
+    <dl>
+      <%= f.fields_for :task do |f| %>
+          <dt><%= f.label :name,"名前" %></dt>
+          <dd><%= f.text_field :name %></dd>
+
+          <dt><%= f.label :description,"内容" %></dt>
+          <dd><%= f.text_area :description %></dd>
+      <% end %>
+
+      <dt><%= f.label :deadline ,"終了日" %></dt>
+      <dd><%= f.date_select :deadline %></dd>
+    </dl>
+      <%= f.label :repeat_rule,"種類" %>
+      <%= f.radio_button :repeat_rule,"daily" %><%= f.label :repeat_rule,"デイリー" %>
+      <%= f.radio_button :repeat_rule,"weekly" %><%= f.label :repeat_rule,"ウィークリー" %>
+      <%= f.radio_button :repeat_rule,"monthly" %><%= f.label :repeat_rule,"マンスリー" %>
+      <%= f.radio_button :repeat_rule,"unique" %><%= f.label :repeat_rule,"一度きり" %>
+    
+      <%= f.submit "作成" %>
+<% end %>
+
+<% if @todo_list.errors.any? %>
+  <ul>
+    <% @todo_list.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+    <% end %>
+  </ul>
+<% end %>

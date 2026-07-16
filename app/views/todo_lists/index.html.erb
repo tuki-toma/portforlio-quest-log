@@ -1,0 +1,61 @@
+<h2>todo_list</h2>
+<h3>デイリー</h3>
+<% @todo_lists_daily.each do |daily| %>
+    <dl>
+      <dt>名前</dt>
+      <dd><%= daily.task.name %></dd>
+      <dt>内容</dt>
+      <dd><%= daily.task.description %></dd>
+      <dt>終了日</dt>
+      <dd><%= daily.deadline %></dd>
+    </dl>
+    <%= button_to "#{daily.task.name}完了!",completions_path(task_id: daily.task.id),method: :post %>
+    <%= button_to "削除" ,todo_list_path(daily),method: :delete %>
+  <%= link_to "編集" ,edit_todo_list_path(daily) %>
+<% end %>
+
+<h3>ウィークリー</h3>
+<% @todo_lists_weekly.each do |weekly| %>
+    <dl>
+      <dt>名前</dt>
+      <dd><%= weekly.task.name %></dd>
+      <dt>内容</dt>
+      <dd><%= weekly.task.description %></dd>
+      <dt>終了日</dt>
+      <dd><%= weekly.deadline %></dd>
+    </dl>
+    <%= button_to "#{weekly.task.name}完了!",completions_path(task_id: weekly.task.id),method: :post %>
+    <%= button_to "削除" ,todo_list_path(weekly),method: :delete %>
+  <%= link_to "編集" ,edit_todo_list_path(weekly) %>
+<% end %>
+
+
+<h3>マンスリー</h3>
+<% @todo_lists_monthly.each do |monthly| %>
+    <dl>
+      <dt>名前</dt>
+      <dd><%= monthly.task.name %></dd>
+      <dt>内容</dt>
+      <dd><%= monthly.task.description %></dd>
+      <dt>終了日</dt>
+      <dd><%= monthly.deadline %></dd>
+    </dl>
+    <%= button_to "#{monthly.task.name}完了!",completions_path(task_id: monthly.task.id),method: :post %>
+    <%= button_to "削除" ,todo_list_path(monthly),method: :delete %>
+  <%= link_to "編集" ,edit_todo_list_path(monthly) %>
+<% end %>
+
+<h3>例外</h3>
+<% @todo_lists_unique.each do |unique| %>
+    <dl>
+      <dt>名前</dt>
+      <dd><%= unique.task.name %></dd>
+      <dt>内容</dt>
+      <dd><%= unique.task.description %></dd>
+      <dt>終了日</dt>
+      <dd><%= unique.deadline %></dd>
+    </dl>
+    <%= button_to "#{unique.task.name}完了!",completions_path(task_id: unique.task.id),method: :post %>
+    <%= button_to "削除" ,todo_list_path(unique),method: :delete %>
+  <%= link_to "編集" ,edit_todo_list_path(unique) %>
+<% end %>

@@ -5,5 +5,6 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
   has_many :tasks,dependent: :destroy
   has_many :habits,through: :tasks
+  has_many :todo_lists,through: :tasks
   has_one_attached :icon
 end
