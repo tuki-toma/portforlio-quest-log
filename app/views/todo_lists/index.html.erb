@@ -7,7 +7,9 @@
       <dt>内容</dt>
       <dd><%= daily.task.description %></dd>
       <dt>終了日</dt>
-      <dd><%= daily.deadline %></dd>
+      <dd><%= daily.deadline.to_date %></dd>
+      <dt>最大継続日数</dt>
+      <dd><%= daily.task.keep_count %>
     </dl>
     <%= button_to "#{daily.task.name}完了!",completions_path(task_id: daily.task.id),method: :post %>
     <%= button_to "削除" ,todo_list_path(daily),method: :delete %>
@@ -22,7 +24,9 @@
       <dt>内容</dt>
       <dd><%= weekly.task.description %></dd>
       <dt>終了日</dt>
-      <dd><%= weekly.deadline %></dd>
+      <dd><%= weekly.deadline.to_date %></dd>
+      <dt>最大継続日数</dt>
+      <dd><%= weekly.task.keep_count %>
     </dl>
     <%= button_to "#{weekly.task.name}完了!",completions_path(task_id: weekly.task.id),method: :post %>
     <%= button_to "削除" ,todo_list_path(weekly),method: :delete %>
@@ -38,7 +42,9 @@
       <dt>内容</dt>
       <dd><%= monthly.task.description %></dd>
       <dt>終了日</dt>
-      <dd><%= monthly.deadline %></dd>
+      <dd><%= monthly.deadline.to_date %></dd>
+      <dt>最大継続日数</dt>
+      <dd><%= monthly.task.keep_count %>
     </dl>
     <%= button_to "#{monthly.task.name}完了!",completions_path(task_id: monthly.task.id),method: :post %>
     <%= button_to "削除" ,todo_list_path(monthly),method: :delete %>
@@ -53,7 +59,7 @@
       <dt>内容</dt>
       <dd><%= unique.task.description %></dd>
       <dt>終了日</dt>
-      <dd><%= unique.deadline %></dd>
+      <dd><%= unique.deadline.to_date %></dd>
     </dl>
     <%= button_to "#{unique.task.name}完了!",completions_path(task_id: unique.task.id),method: :post %>
     <%= button_to "削除" ,todo_list_path(unique),method: :delete %>
