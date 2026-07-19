@@ -19,18 +19,21 @@
 
   <body>
     <header>
-      <h1>Quest Log</h1>
+      <h1 class= tytle>Quest Log</h1>
       <% if current_user %>
-        <%= current_user.name %>
+        <div class= user_name ><%= current_user.name %><div>
+        
         <% if current_user.icon.attached? %>
           <%= image_tag current_user.icon %>
         <% else %>
           <%= image_tag "defo.icon.png" %>
         <% end %>
+        
       <% else %>
         ゲストユーザー
-        <%= image_tag "defo.icon.png" %>
+      <div class= icon><%= image_tag "defo.icon.png" %></div>
       <% end %>
+    </header>
       
         
     <%= yield %>
