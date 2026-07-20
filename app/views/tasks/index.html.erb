@@ -1,10 +1,36 @@
 <div>
   <% if user_signed_in? %>
-    <%= link_to "ログアウト",destroy_user_session_path,data:{ turbo_method: :delete } %>
-     
+    <div>⚔ Quest Logへようこそ！</div>
+
+    あなたの毎日の行動をクエストとして記録しましょう。
+
+    <div>🔥 継続は力になる </div>
+    達成したクエストは記録され、あなたの成長につながります。
+
+    <p>現在のクエスト数</p>
+      <div><%= current_user.tasks.count %>個</div>
+
+    今日もクエストを達成しよう！
+    
   <% else %>
-    <%= button_to "ゲストユーザー",users_guest_sign_in_path,method: :post %>
-    <%= link_to "新規登録" ,new_user_registration_path %>
-    <%= link_to "ログイン" ,new_user_session_path %>
+    <div>
+      <p>📖 Quest Logとは？</p>
+
+       面倒な習慣管理をゲーム感覚で続けるためのアプリです。
+
+      <ul>
+        <li>Todoをクエストとして管理</li>
+        <li>Habitで毎日の習慣を記録</li>
+        <li>達成履歴から継続日数を確認</li>
+      </ul>
+
+       小さな達成を積み重ねて、自分だけの冒険記録を作ろう！
+    </div>
+    <div class=button >
+      <%= button_to "ゲストユーザー",users_guest_sign_in_path,method: :post %>
+      <%= button_to "新規登録" ,new_user_registration_path,method: :get %>
+      <%= button_to "ログイン" ,new_user_session_path %>
+    </div>
   <% end %>
 </div>
+

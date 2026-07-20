@@ -13,7 +13,7 @@
     </dl>
     <%= button_to "#{daily.task.name}完了!",completions_path(task_id: daily.task.id),method: :post %>
     <%= button_to "削除" ,todo_list_path(daily),method: :delete %>
-  <%= link_to "編集" ,edit_todo_list_path(daily) %>
+  <%= button_to "編集" ,edit_todo_list_path(daily),method: :get %>
 <% end %>
 
 <h3>ウィークリー</h3>
@@ -30,7 +30,7 @@
     </dl>
     <%= button_to "#{weekly.task.name}完了!",completions_path(task_id: weekly.task.id),method: :post %>
     <%= button_to "削除" ,todo_list_path(weekly),method: :delete %>
-  <%= link_to "編集" ,edit_todo_list_path(weekly) %>
+  <%= button_to "編集" ,edit_todo_list_path(weekly),method: :get %>
 <% end %>
 
 
@@ -48,7 +48,7 @@
     </dl>
     <%= button_to "#{monthly.task.name}完了!",completions_path(task_id: monthly.task.id),method: :post %>
     <%= button_to "削除" ,todo_list_path(monthly),method: :delete %>
-  <%= link_to "編集" ,edit_todo_list_path(monthly) %>
+  <%= button_to "編集" ,edit_todo_list_path(monthly),method: :get %>
 <% end %>
 
 <h3>例外</h3>
@@ -63,5 +63,5 @@
     </dl>
     <%= button_to "#{unique.task.name}完了!",completions_path(task_id: unique.task.id),method: :post %>
     <%= button_to "削除" ,todo_list_path(unique),method: :delete %>
-  <%= link_to "編集" ,edit_todo_list_path(unique) %>
+  <%= link_to "編集" ,edit_todo_list_path(unique),method: :get %>
 <% end %>

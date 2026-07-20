@@ -11,13 +11,16 @@
 
       <dt><%= f.label :deadline ,"終了日" %></dt>
       <dd><%= f.date_select :deadline %></dd>
+      <dt>
+        <%= f.label :repeat_rule,"種類" %>
+      </dt>
+      <dd>
+        <%= f.radio_button :repeat_rule,"daily" %><%= f.label :repeat_rule,"デイリー" %>
+        <%= f.radio_button :repeat_rule,"weekly" %><%= f.label :repeat_rule,"ウィークリー" %>
+        <%= f.radio_button :repeat_rule,"monthly" %><%= f.label :repeat_rule,"マンスリー" %>
+        <%= f.radio_button :repeat_rule,"unique" %><%= f.label :repeat_rule,"一度きり" %>
+      </dd>
     </dl>
-      <%= f.label :repeat_rule,"種類" %>
-      <%= f.radio_button :repeat_rule,"daily" %><%= f.label :repeat_rule,"デイリー" %>
-      <%= f.radio_button :repeat_rule,"weekly" %><%= f.label :repeat_rule,"ウィークリー" %>
-      <%= f.radio_button :repeat_rule,"monthly" %><%= f.label :repeat_rule,"マンスリー" %>
-      <%= f.radio_button :repeat_rule,"unique" %><%= f.label :repeat_rule,"一度きり" %>
-    
       <%= f.submit "作成" %>
 <% end %>
 

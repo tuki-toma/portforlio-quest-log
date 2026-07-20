@@ -6,11 +6,18 @@
           <dd><%= f.text_field :name %></dd>
 
           <dt><%= f.label :description,"内容" %></dt>
-          <dd><%= f.text_area :description %></dd>
+          <dd><%= f.text_area :description %></dd>    
       <% end %>
 
       <dt><%= f.label :end_date ,"終了予定日" %></dt>
       <dd><%= f.date_select :end_date %></dd>
+      <dt>
+        <%= f.label :status,"状態" %>
+      </dt>
+        <dd>
+          <%= f.radio_button :status,"active" %><%= f.label :status,"継続中" %>
+          <%= f.radio_button :status,"paused" %><%= f.label :status,"休息中" %>
+        </dd>
     </dl>
       <%= f.submit "編集" %>
 <% end %>

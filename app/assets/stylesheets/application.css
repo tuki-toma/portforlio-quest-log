@@ -1,13 +1,185 @@
-html,body {
-    padding-left: 3%;
+/* 全体 */
+body {
+    margin: 0;
+    font-family: "Noto Sans JP",sans-serif;
+    background: #f4f1ea;
+    color: #333;
 }
 
-.user_name {
-    font-size: 25px;
+/* ヘッダー */
+header {
+    background: #2c3e50;
+    color: white;
+    padding: 20px,40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
-img {
-    width: 20%;
-    height: 20%;
+header h1 {
+    margin: 0;
+    font-size: 32px;
+}
+
+/* プレイヤー情報  */
+.player-info {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.player-info p {
+    margin: 0;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.player-info small {
+    display: block;
+    margin-bottom: 5px;
+}
+
+/* アイコン */
+.user-icon {
+    width: 60px;
+    height: 60px;
     border-radius: 50%;
+    object-fit: cover;
+}
+
+/* ログアウト */
+header a {
+    color: white;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+/* メイン */
+main {
+    width: 90%;
+    max-width: 1000px;
+    margin: 30px auto;
+    padding-bottom: 100px;
+}
+
+    /* ページタイトル */
+    h2 {
+      text-align: center;
+      color: #2c3e50;
+      margin: 30px 0;
+    }
+
+    /* 種類タイトル */
+    h3 {
+        margin-top: 35px;
+        padding: 10px 15px;
+        background: #2c3e50;
+        color: white;
+        border-radius: 10px;
+    }
+
+    /* クエストカード */
+    dl {
+        background: white;
+        border-radius: 15px;
+        padding: 20px;
+        margin: 20px 0;
+
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 1);
+
+        border-left: 8px solid #8e44ad;
+    }
+
+    /* 項目名 */
+    dt {
+        font-weight: bold;
+        color: #8e44ad;
+        margin-top: 10px;
+    }
+
+    /* 内容 */
+    dd {
+        margin-left: 0;
+        margin-top: 5px;
+        padding-bottom: 5px;
+        border-bottom: 1px solid #eee;
+    }
+
+    /* 完了ボタン */
+    form {
+        display: inline-block;
+        margin: 5px;
+    }
+
+    button,input[type="submit"]{
+        background: #8e44ad;
+        color: white;
+
+        border:none;
+        border-radius: 20px;
+
+        padding:  10px 18px;
+
+        cursor: pointer;
+    }
+
+    button:hover,input[type= "submit"]:hover {
+        transform:scale(1.05);
+    }
+
+    /* 編集・削除リンク */
+    a{
+        color: #2c3e50;
+        text-decoration: none;
+        margin: 5px;
+    }
+
+    a:hover {
+        text-decoration: underline;
+    }
+
+
+/* フッター */
+footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background: #ffffff;
+    border-top: 1px solid #ddd;
+    padding: 12px 0;
+}
+
+footer ul,footer nav {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+footer a {
+    color: #2c3e50;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+footer a:hover {
+    color: #8e44ad;
+}
+
+/* ボタン系 */
+button,input[type="submit"]{
+    background: #8e44ad;
+    color: white;
+    border: none;
+    border-radius: 20px;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+button:hover{
+    input[type="submit"]:hover {
+        opacity: 0.8;
+    }
 }

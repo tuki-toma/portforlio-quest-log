@@ -48,6 +48,7 @@ class HabitsController < ApplicationController
   def habit_params
     params.require(:habit).permit(
       :end_date,
+      :status,
       task_attributes: [:id,:name,:description]
       )
   end
