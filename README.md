@@ -85,18 +85,19 @@ Completionモデルを使用して、タスクの達成履歴を保存してい�
 ## アプリ画面
 
 ### トップ画面
-<img src="docs/home.png" width="800">
+![トップ画面](./docs/home.png)
+
 
 ### 習慣管理
-<img src="docs/habits.png" width="800">
+![習慣管理](./docs/habit.png)
 
 ### Todo管理
-<img src="docs/todo.png" width="800">
+![Todo管理](./docs/todo.png)
 
 
 # ER図
 
-  ![ER図](docs/er_diagram.png)
+![ER図](./docs/er_diagram.png)
 ---
 
 # 使用技術
