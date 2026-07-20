@@ -37,7 +37,7 @@ class TasksController < ApplicationController
       redirect_to:tasks_path,alert:"削除に失敗しました"
     end
   end
-
+  
   private
 
   def task_params

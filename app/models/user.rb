@@ -7,4 +7,8 @@ class User < ApplicationRecord
   has_many :habits,through: :tasks
   has_many :todo_lists,through: :tasks
   has_one_attached :icon
+
+  def guest?
+    email == "guest@example.com"
+  end
 end
