@@ -4,6 +4,8 @@ class Task < ApplicationRecord
     has_one :todo_list,dependent: :destroy
     has_many :completions
     
+    validates :name ,presence:true
+    
     def keep_count
         before = nil
         sum = 0
