@@ -60,7 +60,7 @@ gem "devise"
 
 gem "rails-i18n"
 
-gem "reline","0.6.2"
+gem "reline","0.6.3"
 
 gem "fiddle"
 
