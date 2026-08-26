@@ -11,7 +11,7 @@ Quest Logは、習慣化やTodo管理をゲーム感覚で楽しめるアプリ�
 
 ---
 ## アプリURL
-portforlio-quest-log-production.up.railway.app
+https://portforlio-quest-log-production.up.railway.app/
 ※ゲストユーザーでログインしてアプリを確認できます。
 
 ## 制作背景
